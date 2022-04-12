@@ -1,0 +1,741 @@
+mysql> use Tables_in_wild_db_quest;
+ERROR 1049 (42000): Unknown database 'tables_in_wild_db_quest'
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| checkpoint1        |
+| entrainement       |
+| information_schema |
+| kaamelott          |
+| marmiwild          |
+| mysql              |
+| pdo_quest          |
+| performance_schema |
+| sakila             |
+| sys                |
+| wild_db_quest      |
+| world              |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> use Tables_in_wild_db_quest;
+ERROR 1049 (42000): Unknown database 'tables_in_wild_db_quest'
+mysql> use wild_db_questd ;
+ERROR 1049 (42000): Unknown database 'wild_db_questd'
+mysql> use  wild_db_quest;
+Database changed
+mysql> CREATE TABLE wizard (id INT , firstname VARCHAR(80), lastname VARCHAR (80));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE player (id INT , wizard_id INT,team_id INT , role VARCHAR(50), lastname VARCHAR (80));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE wizard (id INT , name VARCHAR(80));
+ERROR 1050 (42S01): Table 'wizard' already exists
+mysql> CREATE TABLE team (id INT , name VARCHAR(80));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> show tables ;
++-------------------------+
+| Tables_in_wild_db_quest |
++-------------------------+
+| player                  |
+| school                  |
+| team                    |
+| wizard                  |
++-------------------------+
+4 rows in set (0.00 sec)
+
+mysql> -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
+mysql> --
+mysql> -- Host: localhost    Database: wild_db_quest
+mysql> -- ------------------------------------------------------
+mysql> -- Server version5.7.25-0ubuntu0.18.04.2
+mysql>
+mysql> /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET NAMES utf8 */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40103 SET TIME_ZONE='+00:00' */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Dumping data for table `player`
+mysql> --
+mysql>
+mysql> LOCK TABLES `player` WRITE;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40000 ALTER TABLE `player` DISABLE KEYS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO `player` VALUES (1,1,4,'beater','1995-10-09'),(2,2,1,'chaser','1995-08-17'),(3,3,1,'seeker','1994-12-03'),(4,4,3,'chaser','1995-03-24'),(5,5,3,'keeper','1997-07-16'),(6,6,1,'beater','1994-01-10'),(7,7,4,'chaser','1999-01-21'),(8,8,4,'keeper','1991-10-20'),(10,10,1,'beater','1991-08-03'),(11,11,3,'beater','1996-10-04'),(12,12,2,'chaser','1992-01-27'),(13,13,2,'beater','1991-01-11'),(14,14,2,'seeker','1995-08-17'),(16,16,3,'beater','1992-11-27'),(17,17,1,'seeker','1993-07-07'),(18,18,1,'keeper','1991-05-01'),(19,19,4,'keeper','1997-11-02'),(20,20,1,'keeper','1995-04-24'),(21,21,1,'chaser','1991-03-12'),(22,22,2,'chaser','1990-07-05'),(23,23,4,'beater','1995-01-06'),(24,24,1,'beater','1997-02-08'),(25,25,3,'beater','1996-12-16'),(26,26,2,'chaser','1997-02-07'),(27,27,2,'chaser','1999-07-31'),(28,28,3,'seeker','1994-05-13'),(29,29,1,'chaser','1997-08-14'),(30,30,1,'seeker','1993-08-30'),(31,31,1,'beater','1994-11-16'),(32,32,4,'seeker','1992-08-14'),(33,33,1,'keeper','1995-12-02'),(34,34,1,'chaser','1996-01-31'),(35,35,3,'chaser','1992-03-21'),(36,36,3,'seeker','1997-10-30'),(37,37,3,'chaser','1991-04-27'),(38,38,2,'chaser','1998-04-05'),(39,39,1,'beater','1992-02-17'),(40,40,1,'chaser','1995-10-15'),(41,41,1,'chaser','1999-10-25'),(42,42,1,'chaser','1998-05-06'),(43,43,2,'chaser','1998-03-01'),(44,44,2,'chaser','1991-03-11'),(46,46,3,'chaser','1993-11-02'),(47,47,3,'chaser','1992-03-12'),(48,48,3,'seeker','1993-03-17'),(49,49,1,'beater','1992-07-14'),(50,50,3,'chaser','1996-12-02'),(51,51,2,'chaser','1995-06-25'),(52,52,3,'beater','1991-12-14'),(55,55,1,'chaser','1991-05-14'),(56,56,1,'beater','1997-03-05'),(57,57,1,'beater','1996-12-07'),(58,58,1,'chaser','1999-02-23'),(59,59,2,'beater','1995-09-23'),(60,60,2,'beater','1992-04-12'),(61,61,2,'seeker','1992-10-09'),(62,62,3,'chaser','1990-02-27'),(64,64,4,'chaser','1999-01-12'),(66,66,3,'seeker','1991-02-23'),(67,67,4,'beater','1996-07-18'),(68,68,4,'keeper','1993-10-01'),(69,69,3,'beater','1997-03-06'),(70,70,1,'chaser','1995-11-08'),(71,71,4,'beater','1998-06-12'),(72,72,1,'beater','1997-11-23'),(73,73,3,'chaser','1994-01-28'),(74,74,4,'beater','1999-11-25'),(75,75,2,'seeker','1991-12-28'),(76,76,3,'seeker','1993-10-23'),(77,77,1,'seeker','1990-07-31'),(78,78,1,'beater','1992-01-01'),(79,79,1,'seeker','1991-04-27'),(81,81,1,'seeker','1998-03-29'),(82,82,1,'chaser','1991-08-26'),(83,83,1,'keeper','1992-04-17'),(85,85,1,'beater','1990-09-05'),(86,86,1,'seeker','1997-06-22'),(87,87,1,'chaser','1999-04-08'),(88,88,3,'beater','1991-07-08'),(89,89,3,'chaser','1996-09-25'),(90,90,1,'keeper','1993-01-04'),(91,91,4,'beater','1993-11-04'),(92,92,2,'beater','1997-12-14'),(93,93,1,'keeper','1992-05-27');
+Query OK, 84 rows affected (0.01 sec)
+Records: 84  Duplicates: 0  Warnings: 0
+
+mysql> /*!40000 ALTER TABLE `player` ENABLE KEYS */;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> UNLOCK TABLES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Dumping data for table `team`
+mysql> --
+mysql>
+mysql> LOCK TABLES `team` WRITE;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40000 ALTER TABLE `team` DISABLE KEYS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO `team` VALUES (1,'Gryffindor'),(2,'Ravenclaw'),(3,'Slytherin'),(4,'Hufflepuff');
+Query OK, 4 rows affected (0.00 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> /*!40000 ALTER TABLE `team` ENABLE KEYS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UNLOCK TABLES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Dumping data for table `wizard`
+mysql> --
+mysql>
+mysql> LOCK TABLES `wizard` WRITE;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40000 ALTER TABLE `wizard` DISABLE KEYS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO `wizard` VALUES (1,'Hannah','Abbott'),(2,'Katie','Bell'),(3,'Cuthbert','Binns'),(4,'Phineas','Nigellus'),(5,'Regulus','Black'),(6,'Sirius','Black'),(7,'Amelia','Bones'),(8,'Susan','Bones'),(9,'Terry','Boot'),(10,'Lavender','Brown'),(11,'Millicent','Bulstrode'),(12,'Cho','Chang'),(13,'Penelope','Clearwater'),(14,'Michael','Corner'),(15,'Crabbe',''),(16,'Vincent','Crabbe'),(17,'Colin','Creevey'),(18,'Dennis','Creevey'),(19,'Cedric','Diggory'),(20,'Aberforth','Dumbledore'),(21,'Albus','Dumbledore'),(22,'Marietta','Edgecombe'),(23,'Justin','Finch-Fletchley'),(24,'Seamus','Finnigan'),(25,'Marcus','Flint'),(26,'Filius','Flitwick'),(27,'Anthony','Goldstein'),(28,'Gregory','Goyle'),(29,'Hermione','Granger'),(30,'Godric','Gryffindor'),(31,'Rubeus','Hagrid'),(32,'Helga','Hufflepuff'),(33,'Angelina','Johnson'),(34,'Lee','Jordan'),(35,'Bellatrix','Lestrange'),(36,'Rabastan','Lestrange'),(37,'Rodolphus','Lestrange'),(38,'Gilderoy','Lockhart'),(39,'Alice','Longbottom'),(40,'Frank','Longbottom'),(41,'Augusta','Longbottom'),(42,'Neville','Longbottom'),(43,'Luna','Lovegood'),(44,'Xenophilius','Lovegood'),(45,'Remus','Lupin'),(46,'Draco','Malfoy'),(47,'Lucius','Malfoy'),(48,'Narcissa','Malfoy'),(49,'Minerva','McGonagall'),(50,'Theodore','Nott'),(51,'Garrick','Ollivander'),(52,'Pansy','Parkinson'),(53,'Padma','Patil'),(54,'Parvati','Patil'),(55,'Peter','Pettigrew'),(56,'Harry','Potter'),(57,'James','Potter'),(58,'Lily','J.'),(59,'Quirinus','Quirrell'),(60,'Helena','Ravenclaw'),(61,'Rowena','Ravenclaw'),(62,'Tom','Riddle'),(63,'Demelza','Robins'),(64,'Newton','Scamander'),(65,'Horace','Slughorn'),(66,'Salazar','Slytherin'),(67,'Hepzibah','Smith'),(68,'Zacharias','Smith'),(69,'Severus','Snape'),(70,'Alicia','Spinnet'),(71,'Pomona','Sprout'),(72,'Dean','Thomas'),(73,'Andromeda','Tonks'),(74,'Nymphadora','Tonks'),(75,'Sybill','Trelawney'),(76,'Dolores','Umbridge'),(77,'Romilda','Vane'),(78,'Arthur','Weasley'),(79,'William','Weasley'),(80,'Charles','Weasley'),(81,'Fred','Weasley'),(82,'George','Weasley'),(83,'Ginevra','Weasley'),(84,'Molly','Weasley'),(85,'Percy','Weasley'),(86,'Ronald','Weasley'),(87,'Oliver','Wood'),(88,'Blaise','Zabini'),(89,'Bloody','Baron'),(90,'Cadogan',''),(91,'Fat','Friar'),(92,'Myrtle','Warren'),(93,'Nicholas','de');
+Query OK, 93 rows affected (0.01 sec)
+Records: 93  Duplicates: 0  Warnings: 0
+
+mysql> /*!40000 ALTER TABLE `wizard` ENABLE KEYS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UNLOCK TABLES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> -- Dump completed on 2019-04-07 11:45:44
+mysql>
+mysql> SELECT*FROM team;
++------+------------+
+| id   | name       |
++------+------------+
+|    1 | Gryffindor |
+|    2 | Ravenclaw  |
+|    3 | Slytherin  |
+|    4 | Hufflepuff |
++------+------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT*FROM players ;
+ERROR 1146 (42S02): Table 'wild_db_quest.players' doesn't exist
+mysql> SELECT*FROM player ;
++------+-----------+---------+--------+------------+
+| id   | wizard_id | team_id | role   | lastname   |
++------+-----------+---------+--------+------------+
+|    1 |         1 |       4 | beater | 1995-10-09 |
+|    2 |         2 |       1 | chaser | 1995-08-17 |
+|    3 |         3 |       1 | seeker | 1994-12-03 |
+|    4 |         4 |       3 | chaser | 1995-03-24 |
+|    5 |         5 |       3 | keeper | 1997-07-16 |
+|    6 |         6 |       1 | beater | 1994-01-10 |
+|    7 |         7 |       4 | chaser | 1999-01-21 |
+|    8 |         8 |       4 | keeper | 1991-10-20 |
+|   10 |        10 |       1 | beater | 1991-08-03 |
+|   11 |        11 |       3 | beater | 1996-10-04 |
+|   12 |        12 |       2 | chaser | 1992-01-27 |
+|   13 |        13 |       2 | beater | 1991-01-11 |
+|   14 |        14 |       2 | seeker | 1995-08-17 |
+|   16 |        16 |       3 | beater | 1992-11-27 |
+|   17 |        17 |       1 | seeker | 1993-07-07 |
+|   18 |        18 |       1 | keeper | 1991-05-01 |
+|   19 |        19 |       4 | keeper | 1997-11-02 |
+|   20 |        20 |       1 | keeper | 1995-04-24 |
+|   21 |        21 |       1 | chaser | 1991-03-12 |
+|   22 |        22 |       2 | chaser | 1990-07-05 |
+|   23 |        23 |       4 | beater | 1995-01-06 |
+|   24 |        24 |       1 | beater | 1997-02-08 |
+|   25 |        25 |       3 | beater | 1996-12-16 |
+|   26 |        26 |       2 | chaser | 1997-02-07 |
+|   27 |        27 |       2 | chaser | 1999-07-31 |
+|   28 |        28 |       3 | seeker | 1994-05-13 |
+|   29 |        29 |       1 | chaser | 1997-08-14 |
+|   30 |        30 |       1 | seeker | 1993-08-30 |
+|   31 |        31 |       1 | beater | 1994-11-16 |
+|   32 |        32 |       4 | seeker | 1992-08-14 |
+|   33 |        33 |       1 | keeper | 1995-12-02 |
+|   34 |        34 |       1 | chaser | 1996-01-31 |
+|   35 |        35 |       3 | chaser | 1992-03-21 |
+|   36 |        36 |       3 | seeker | 1997-10-30 |
+|   37 |        37 |       3 | chaser | 1991-04-27 |
+|   38 |        38 |       2 | chaser | 1998-04-05 |
+|   39 |        39 |       1 | beater | 1992-02-17 |
+|   40 |        40 |       1 | chaser | 1995-10-15 |
+|   41 |        41 |       1 | chaser | 1999-10-25 |
+|   42 |        42 |       1 | chaser | 1998-05-06 |
+|   43 |        43 |       2 | chaser | 1998-03-01 |
+|   44 |        44 |       2 | chaser | 1991-03-11 |
+|   46 |        46 |       3 | chaser | 1993-11-02 |
+|   47 |        47 |       3 | chaser | 1992-03-12 |
+|   48 |        48 |       3 | seeker | 1993-03-17 |
+|   49 |        49 |       1 | beater | 1992-07-14 |
+|   50 |        50 |       3 | chaser | 1996-12-02 |
+|   51 |        51 |       2 | chaser | 1995-06-25 |
+|   52 |        52 |       3 | beater | 1991-12-14 |
+|   55 |        55 |       1 | chaser | 1991-05-14 |
+|   56 |        56 |       1 | beater | 1997-03-05 |
+|   57 |        57 |       1 | beater | 1996-12-07 |
+|   58 |        58 |       1 | chaser | 1999-02-23 |
+|   59 |        59 |       2 | beater | 1995-09-23 |
+|   60 |        60 |       2 | beater | 1992-04-12 |
+|   61 |        61 |       2 | seeker | 1992-10-09 |
+|   62 |        62 |       3 | chaser | 1990-02-27 |
+|   64 |        64 |       4 | chaser | 1999-01-12 |
+|   66 |        66 |       3 | seeker | 1991-02-23 |
+|   67 |        67 |       4 | beater | 1996-07-18 |
+|   68 |        68 |       4 | keeper | 1993-10-01 |
+|   69 |        69 |       3 | beater | 1997-03-06 |
+|   70 |        70 |       1 | chaser | 1995-11-08 |
+|   71 |        71 |       4 | beater | 1998-06-12 |
+|   72 |        72 |       1 | beater | 1997-11-23 |
+|   73 |        73 |       3 | chaser | 1994-01-28 |
+|   74 |        74 |       4 | beater | 1999-11-25 |
+|   75 |        75 |       2 | seeker | 1991-12-28 |
+|   76 |        76 |       3 | seeker | 1993-10-23 |
+|   77 |        77 |       1 | seeker | 1990-07-31 |
+|   78 |        78 |       1 | beater | 1992-01-01 |
+|   79 |        79 |       1 | seeker | 1991-04-27 |
+|   81 |        81 |       1 | seeker | 1998-03-29 |
+|   82 |        82 |       1 | chaser | 1991-08-26 |
+|   83 |        83 |       1 | keeper | 1992-04-17 |
+|   85 |        85 |       1 | beater | 1990-09-05 |
+|   86 |        86 |       1 | seeker | 1997-06-22 |
+|   87 |        87 |       1 | chaser | 1999-04-08 |
+|   88 |        88 |       3 | beater | 1991-07-08 |
+|   89 |        89 |       3 | chaser | 1996-09-25 |
+|   90 |        90 |       1 | keeper | 1993-01-04 |
+|   91 |        91 |       4 | beater | 1993-11-04 |
+|   92 |        92 |       2 | beater | 1997-12-14 |
+|   93 |        93 |       1 | keeper | 1992-05-27 |
++------+-----------+---------+--------+------------+
+84 rows in set (0.00 sec)
+
+mysql> SELECT * from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id;
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+| id   | wizard_id | team_id | role   | lastname   | id   | firstname   | lastname        | id   | name       |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+|    1 |         1 |       4 | beater | 1995-10-09 |    1 | Hannah      | Abbott          |    4 | Hufflepuff |
+|    2 |         2 |       1 | chaser | 1995-08-17 |    2 | Katie       | Bell            |    1 | Gryffindor |
+|    3 |         3 |       1 | seeker | 1994-12-03 |    3 | Cuthbert    | Binns           |    1 | Gryffindor |
+|    4 |         4 |       3 | chaser | 1995-03-24 |    4 | Phineas     | Nigellus        |    3 | Slytherin  |
+|    5 |         5 |       3 | keeper | 1997-07-16 |    5 | Regulus     | Black           |    3 | Slytherin  |
+|    6 |         6 |       1 | beater | 1994-01-10 |    6 | Sirius      | Black           |    1 | Gryffindor |
+|    7 |         7 |       4 | chaser | 1999-01-21 |    7 | Amelia      | Bones           |    4 | Hufflepuff |
+|    8 |         8 |       4 | keeper | 1991-10-20 |    8 | Susan       | Bones           |    4 | Hufflepuff |
+|   10 |        10 |       1 | beater | 1991-08-03 |   10 | Lavender    | Brown           |    1 | Gryffindor |
+|   11 |        11 |       3 | beater | 1996-10-04 |   11 | Millicent   | Bulstrode       |    3 | Slytherin  |
+|   12 |        12 |       2 | chaser | 1992-01-27 |   12 | Cho         | Chang           |    2 | Ravenclaw  |
+|   13 |        13 |       2 | beater | 1991-01-11 |   13 | Penelope    | Clearwater      |    2 | Ravenclaw  |
+|   14 |        14 |       2 | seeker | 1995-08-17 |   14 | Michael     | Corner          |    2 | Ravenclaw  |
+|   16 |        16 |       3 | beater | 1992-11-27 |   16 | Vincent     | Crabbe          |    3 | Slytherin  |
+|   17 |        17 |       1 | seeker | 1993-07-07 |   17 | Colin       | Creevey         |    1 | Gryffindor |
+|   18 |        18 |       1 | keeper | 1991-05-01 |   18 | Dennis      | Creevey         |    1 | Gryffindor |
+|   19 |        19 |       4 | keeper | 1997-11-02 |   19 | Cedric      | Diggory         |    4 | Hufflepuff |
+|   20 |        20 |       1 | keeper | 1995-04-24 |   20 | Aberforth   | Dumbledore      |    1 | Gryffindor |
+|   21 |        21 |       1 | chaser | 1991-03-12 |   21 | Albus       | Dumbledore      |    1 | Gryffindor |
+|   22 |        22 |       2 | chaser | 1990-07-05 |   22 | Marietta    | Edgecombe       |    2 | Ravenclaw  |
+|   23 |        23 |       4 | beater | 1995-01-06 |   23 | Justin      | Finch-Fletchley |    4 | Hufflepuff |
+|   24 |        24 |       1 | beater | 1997-02-08 |   24 | Seamus      | Finnigan        |    1 | Gryffindor |
+|   25 |        25 |       3 | beater | 1996-12-16 |   25 | Marcus      | Flint           |    3 | Slytherin  |
+|   26 |        26 |       2 | chaser | 1997-02-07 |   26 | Filius      | Flitwick        |    2 | Ravenclaw  |
+|   27 |        27 |       2 | chaser | 1999-07-31 |   27 | Anthony     | Goldstein       |    2 | Ravenclaw  |
+|   28 |        28 |       3 | seeker | 1994-05-13 |   28 | Gregory     | Goyle           |    3 | Slytherin  |
+|   29 |        29 |       1 | chaser | 1997-08-14 |   29 | Hermione    | Granger         |    1 | Gryffindor |
+|   30 |        30 |       1 | seeker | 1993-08-30 |   30 | Godric      | Gryffindor      |    1 | Gryffindor |
+|   31 |        31 |       1 | beater | 1994-11-16 |   31 | Rubeus      | Hagrid          |    1 | Gryffindor |
+|   32 |        32 |       4 | seeker | 1992-08-14 |   32 | Helga       | Hufflepuff      |    4 | Hufflepuff |
+|   33 |        33 |       1 | keeper | 1995-12-02 |   33 | Angelina    | Johnson         |    1 | Gryffindor |
+|   34 |        34 |       1 | chaser | 1996-01-31 |   34 | Lee         | Jordan          |    1 | Gryffindor |
+|   35 |        35 |       3 | chaser | 1992-03-21 |   35 | Bellatrix   | Lestrange       |    3 | Slytherin  |
+|   36 |        36 |       3 | seeker | 1997-10-30 |   36 | Rabastan    | Lestrange       |    3 | Slytherin  |
+|   37 |        37 |       3 | chaser | 1991-04-27 |   37 | Rodolphus   | Lestrange       |    3 | Slytherin  |
+|   38 |        38 |       2 | chaser | 1998-04-05 |   38 | Gilderoy    | Lockhart        |    2 | Ravenclaw  |
+|   39 |        39 |       1 | beater | 1992-02-17 |   39 | Alice       | Longbottom      |    1 | Gryffindor |
+|   40 |        40 |       1 | chaser | 1995-10-15 |   40 | Frank       | Longbottom      |    1 | Gryffindor |
+|   41 |        41 |       1 | chaser | 1999-10-25 |   41 | Augusta     | Longbottom      |    1 | Gryffindor |
+|   42 |        42 |       1 | chaser | 1998-05-06 |   42 | Neville     | Longbottom      |    1 | Gryffindor |
+|   43 |        43 |       2 | chaser | 1998-03-01 |   43 | Luna        | Lovegood        |    2 | Ravenclaw  |
+|   44 |        44 |       2 | chaser | 1991-03-11 |   44 | Xenophilius | Lovegood        |    2 | Ravenclaw  |
+|   46 |        46 |       3 | chaser | 1993-11-02 |   46 | Draco       | Malfoy          |    3 | Slytherin  |
+|   47 |        47 |       3 | chaser | 1992-03-12 |   47 | Lucius      | Malfoy          |    3 | Slytherin  |
+|   48 |        48 |       3 | seeker | 1993-03-17 |   48 | Narcissa    | Malfoy          |    3 | Slytherin  |
+|   49 |        49 |       1 | beater | 1992-07-14 |   49 | Minerva     | McGonagall      |    1 | Gryffindor |
+|   50 |        50 |       3 | chaser | 1996-12-02 |   50 | Theodore    | Nott            |    3 | Slytherin  |
+|   51 |        51 |       2 | chaser | 1995-06-25 |   51 | Garrick     | Ollivander      |    2 | Ravenclaw  |
+|   52 |        52 |       3 | beater | 1991-12-14 |   52 | Pansy       | Parkinson       |    3 | Slytherin  |
+|   55 |        55 |       1 | chaser | 1991-05-14 |   55 | Peter       | Pettigrew       |    1 | Gryffindor |
+|   56 |        56 |       1 | beater | 1997-03-05 |   56 | Harry       | Potter          |    1 | Gryffindor |
+|   57 |        57 |       1 | beater | 1996-12-07 |   57 | James       | Potter          |    1 | Gryffindor |
+|   58 |        58 |       1 | chaser | 1999-02-23 |   58 | Lily        | J.              |    1 | Gryffindor |
+|   59 |        59 |       2 | beater | 1995-09-23 |   59 | Quirinus    | Quirrell        |    2 | Ravenclaw  |
+|   60 |        60 |       2 | beater | 1992-04-12 |   60 | Helena      | Ravenclaw       |    2 | Ravenclaw  |
+|   61 |        61 |       2 | seeker | 1992-10-09 |   61 | Rowena      | Ravenclaw       |    2 | Ravenclaw  |
+|   62 |        62 |       3 | chaser | 1990-02-27 |   62 | Tom         | Riddle          |    3 | Slytherin  |
+|   64 |        64 |       4 | chaser | 1999-01-12 |   64 | Newton      | Scamander       |    4 | Hufflepuff |
+|   66 |        66 |       3 | seeker | 1991-02-23 |   66 | Salazar     | Slytherin       |    3 | Slytherin  |
+|   67 |        67 |       4 | beater | 1996-07-18 |   67 | Hepzibah    | Smith           |    4 | Hufflepuff |
+|   68 |        68 |       4 | keeper | 1993-10-01 |   68 | Zacharias   | Smith           |    4 | Hufflepuff |
+|   69 |        69 |       3 | beater | 1997-03-06 |   69 | Severus     | Snape           |    3 | Slytherin  |
+|   70 |        70 |       1 | chaser | 1995-11-08 |   70 | Alicia      | Spinnet         |    1 | Gryffindor |
+|   71 |        71 |       4 | beater | 1998-06-12 |   71 | Pomona      | Sprout          |    4 | Hufflepuff |
+|   72 |        72 |       1 | beater | 1997-11-23 |   72 | Dean        | Thomas          |    1 | Gryffindor |
+|   73 |        73 |       3 | chaser | 1994-01-28 |   73 | Andromeda   | Tonks           |    3 | Slytherin  |
+|   74 |        74 |       4 | beater | 1999-11-25 |   74 | Nymphadora  | Tonks           |    4 | Hufflepuff |
+|   75 |        75 |       2 | seeker | 1991-12-28 |   75 | Sybill      | Trelawney       |    2 | Ravenclaw  |
+|   76 |        76 |       3 | seeker | 1993-10-23 |   76 | Dolores     | Umbridge        |    3 | Slytherin  |
+|   77 |        77 |       1 | seeker | 1990-07-31 |   77 | Romilda     | Vane            |    1 | Gryffindor |
+|   78 |        78 |       1 | beater | 1992-01-01 |   78 | Arthur      | Weasley         |    1 | Gryffindor |
+|   79 |        79 |       1 | seeker | 1991-04-27 |   79 | William     | Weasley         |    1 | Gryffindor |
+|   81 |        81 |       1 | seeker | 1998-03-29 |   81 | Fred        | Weasley         |    1 | Gryffindor |
+|   82 |        82 |       1 | chaser | 1991-08-26 |   82 | George      | Weasley         |    1 | Gryffindor |
+|   83 |        83 |       1 | keeper | 1992-04-17 |   83 | Ginevra     | Weasley         |    1 | Gryffindor |
+|   85 |        85 |       1 | beater | 1990-09-05 |   85 | Percy       | Weasley         |    1 | Gryffindor |
+|   86 |        86 |       1 | seeker | 1997-06-22 |   86 | Ronald      | Weasley         |    1 | Gryffindor |
+|   87 |        87 |       1 | chaser | 1999-04-08 |   87 | Oliver      | Wood            |    1 | Gryffindor |
+|   88 |        88 |       3 | beater | 1991-07-08 |   88 | Blaise      | Zabini          |    3 | Slytherin  |
+|   89 |        89 |       3 | chaser | 1996-09-25 |   89 | Bloody      | Baron           |    3 | Slytherin  |
+|   90 |        90 |       1 | keeper | 1993-01-04 |   90 | Cadogan     |                 |    1 | Gryffindor |
+|   91 |        91 |       4 | beater | 1993-11-04 |   91 | Fat         | Friar           |    4 | Hufflepuff |
+|   92 |        92 |       2 | beater | 1997-12-14 |   92 | Myrtle      | Warren          |    2 | Ravenclaw  |
+|   93 |        93 |       1 | keeper | 1992-05-27 |   93 | Nicholas    | de              |    1 | Gryffindor |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+84 rows in set (0.00 sec)
+
+mysql> SELECT * from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id ORDER by t.name;
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+| id   | wizard_id | team_id | role   | lastname   | id   | firstname   | lastname        | id   | name       |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+|   39 |        39 |       1 | beater | 1992-02-17 |   39 | Alice       | Longbottom      |    1 | Gryffindor |
+|    2 |         2 |       1 | chaser | 1995-08-17 |    2 | Katie       | Bell            |    1 | Gryffindor |
+|    3 |         3 |       1 | seeker | 1994-12-03 |    3 | Cuthbert    | Binns           |    1 | Gryffindor |
+|   40 |        40 |       1 | chaser | 1995-10-15 |   40 | Frank       | Longbottom      |    1 | Gryffindor |
+|   90 |        90 |       1 | keeper | 1993-01-04 |   90 | Cadogan     |                 |    1 | Gryffindor |
+|    6 |         6 |       1 | beater | 1994-01-10 |    6 | Sirius      | Black           |    1 | Gryffindor |
+|   41 |        41 |       1 | chaser | 1999-10-25 |   41 | Augusta     | Longbottom      |    1 | Gryffindor |
+|   42 |        42 |       1 | chaser | 1998-05-06 |   42 | Neville     | Longbottom      |    1 | Gryffindor |
+|   10 |        10 |       1 | beater | 1991-08-03 |   10 | Lavender    | Brown           |    1 | Gryffindor |
+|   87 |        87 |       1 | chaser | 1999-04-08 |   87 | Oliver      | Wood            |    1 | Gryffindor |
+|   93 |        93 |       1 | keeper | 1992-05-27 |   93 | Nicholas    | de              |    1 | Gryffindor |
+|   86 |        86 |       1 | seeker | 1997-06-22 |   86 | Ronald      | Weasley         |    1 | Gryffindor |
+|   85 |        85 |       1 | beater | 1990-09-05 |   85 | Percy       | Weasley         |    1 | Gryffindor |
+|   83 |        83 |       1 | keeper | 1992-04-17 |   83 | Ginevra     | Weasley         |    1 | Gryffindor |
+|   17 |        17 |       1 | seeker | 1993-07-07 |   17 | Colin       | Creevey         |    1 | Gryffindor |
+|   18 |        18 |       1 | keeper | 1991-05-01 |   18 | Dennis      | Creevey         |    1 | Gryffindor |
+|   55 |        55 |       1 | chaser | 1991-05-14 |   55 | Peter       | Pettigrew       |    1 | Gryffindor |
+|   20 |        20 |       1 | keeper | 1995-04-24 |   20 | Aberforth   | Dumbledore      |    1 | Gryffindor |
+|   21 |        21 |       1 | chaser | 1991-03-12 |   21 | Albus       | Dumbledore      |    1 | Gryffindor |
+|   81 |        81 |       1 | seeker | 1998-03-29 |   81 | Fred        | Weasley         |    1 | Gryffindor |
+|   79 |        79 |       1 | seeker | 1991-04-27 |   79 | William     | Weasley         |    1 | Gryffindor |
+|   24 |        24 |       1 | beater | 1997-02-08 |   24 | Seamus      | Finnigan        |    1 | Gryffindor |
+|   78 |        78 |       1 | beater | 1992-01-01 |   78 | Arthur      | Weasley         |    1 | Gryffindor |
+|   77 |        77 |       1 | seeker | 1990-07-31 |   77 | Romilda     | Vane            |    1 | Gryffindor |
+|   72 |        72 |       1 | beater | 1997-11-23 |   72 | Dean        | Thomas          |    1 | Gryffindor |
+|   82 |        82 |       1 | chaser | 1991-08-26 |   82 | George      | Weasley         |    1 | Gryffindor |
+|   29 |        29 |       1 | chaser | 1997-08-14 |   29 | Hermione    | Granger         |    1 | Gryffindor |
+|   30 |        30 |       1 | seeker | 1993-08-30 |   30 | Godric      | Gryffindor      |    1 | Gryffindor |
+|   31 |        31 |       1 | beater | 1994-11-16 |   31 | Rubeus      | Hagrid          |    1 | Gryffindor |
+|   49 |        49 |       1 | beater | 1992-07-14 |   49 | Minerva     | McGonagall      |    1 | Gryffindor |
+|   33 |        33 |       1 | keeper | 1995-12-02 |   33 | Angelina    | Johnson         |    1 | Gryffindor |
+|   34 |        34 |       1 | chaser | 1996-01-31 |   34 | Lee         | Jordan          |    1 | Gryffindor |
+|   58 |        58 |       1 | chaser | 1999-02-23 |   58 | Lily        | J.              |    1 | Gryffindor |
+|   70 |        70 |       1 | chaser | 1995-11-08 |   70 | Alicia      | Spinnet         |    1 | Gryffindor |
+|   57 |        57 |       1 | beater | 1996-12-07 |   57 | James       | Potter          |    1 | Gryffindor |
+|   56 |        56 |       1 | beater | 1997-03-05 |   56 | Harry       | Potter          |    1 | Gryffindor |
+|    1 |         1 |       4 | beater | 1995-10-09 |    1 | Hannah      | Abbott          |    4 | Hufflepuff |
+|   71 |        71 |       4 | beater | 1998-06-12 |   71 | Pomona      | Sprout          |    4 | Hufflepuff |
+|    7 |         7 |       4 | chaser | 1999-01-21 |    7 | Amelia      | Bones           |    4 | Hufflepuff |
+|    8 |         8 |       4 | keeper | 1991-10-20 |    8 | Susan       | Bones           |    4 | Hufflepuff |
+|   19 |        19 |       4 | keeper | 1997-11-02 |   19 | Cedric      | Diggory         |    4 | Hufflepuff |
+|   32 |        32 |       4 | seeker | 1992-08-14 |   32 | Helga       | Hufflepuff      |    4 | Hufflepuff |
+|   23 |        23 |       4 | beater | 1995-01-06 |   23 | Justin      | Finch-Fletchley |    4 | Hufflepuff |
+|   64 |        64 |       4 | chaser | 1999-01-12 |   64 | Newton      | Scamander       |    4 | Hufflepuff |
+|   67 |        67 |       4 | beater | 1996-07-18 |   67 | Hepzibah    | Smith           |    4 | Hufflepuff |
+|   68 |        68 |       4 | keeper | 1993-10-01 |   68 | Zacharias   | Smith           |    4 | Hufflepuff |
+|   74 |        74 |       4 | beater | 1999-11-25 |   74 | Nymphadora  | Tonks           |    4 | Hufflepuff |
+|   91 |        91 |       4 | beater | 1993-11-04 |   91 | Fat         | Friar           |    4 | Hufflepuff |
+|   61 |        61 |       2 | seeker | 1992-10-09 |   61 | Rowena      | Ravenclaw       |    2 | Ravenclaw  |
+|   43 |        43 |       2 | chaser | 1998-03-01 |   43 | Luna        | Lovegood        |    2 | Ravenclaw  |
+|   38 |        38 |       2 | chaser | 1998-04-05 |   38 | Gilderoy    | Lockhart        |    2 | Ravenclaw  |
+|   44 |        44 |       2 | chaser | 1991-03-11 |   44 | Xenophilius | Lovegood        |    2 | Ravenclaw  |
+|   27 |        27 |       2 | chaser | 1999-07-31 |   27 | Anthony     | Goldstein       |    2 | Ravenclaw  |
+|   59 |        59 |       2 | beater | 1995-09-23 |   59 | Quirinus    | Quirrell        |    2 | Ravenclaw  |
+|   60 |        60 |       2 | beater | 1992-04-12 |   60 | Helena      | Ravenclaw       |    2 | Ravenclaw  |
+|   75 |        75 |       2 | seeker | 1991-12-28 |   75 | Sybill      | Trelawney       |    2 | Ravenclaw  |
+|   26 |        26 |       2 | chaser | 1997-02-07 |   26 | Filius      | Flitwick        |    2 | Ravenclaw  |
+|   12 |        12 |       2 | chaser | 1992-01-27 |   12 | Cho         | Chang           |    2 | Ravenclaw  |
+|   22 |        22 |       2 | chaser | 1990-07-05 |   22 | Marietta    | Edgecombe       |    2 | Ravenclaw  |
+|   14 |        14 |       2 | seeker | 1995-08-17 |   14 | Michael     | Corner          |    2 | Ravenclaw  |
+|   13 |        13 |       2 | beater | 1991-01-11 |   13 | Penelope    | Clearwater      |    2 | Ravenclaw  |
+|   51 |        51 |       2 | chaser | 1995-06-25 |   51 | Garrick     | Ollivander      |    2 | Ravenclaw  |
+|   92 |        92 |       2 | beater | 1997-12-14 |   92 | Myrtle      | Warren          |    2 | Ravenclaw  |
+|   36 |        36 |       3 | seeker | 1997-10-30 |   36 | Rabastan    | Lestrange       |    3 | Slytherin  |
+|   28 |        28 |       3 | seeker | 1994-05-13 |   28 | Gregory     | Goyle           |    3 | Slytherin  |
+|   73 |        73 |       3 | chaser | 1994-01-28 |   73 | Andromeda   | Tonks           |    3 | Slytherin  |
+|   50 |        50 |       3 | chaser | 1996-12-02 |   50 | Theodore    | Nott            |    3 | Slytherin  |
+|    4 |         4 |       3 | chaser | 1995-03-24 |    4 | Phineas     | Nigellus        |    3 | Slytherin  |
+|   76 |        76 |       3 | seeker | 1993-10-23 |   76 | Dolores     | Umbridge        |    3 | Slytherin  |
+|   37 |        37 |       3 | chaser | 1991-04-27 |   37 | Rodolphus   | Lestrange       |    3 | Slytherin  |
+|   25 |        25 |       3 | beater | 1996-12-16 |   25 | Marcus      | Flint           |    3 | Slytherin  |
+|   46 |        46 |       3 | chaser | 1993-11-02 |   46 | Draco       | Malfoy          |    3 | Slytherin  |
+|   62 |        62 |       3 | chaser | 1990-02-27 |   62 | Tom         | Riddle          |    3 | Slytherin  |
+|   35 |        35 |       3 | chaser | 1992-03-21 |   35 | Bellatrix   | Lestrange       |    3 | Slytherin  |
+|   16 |        16 |       3 | beater | 1992-11-27 |   16 | Vincent     | Crabbe          |    3 | Slytherin  |
+|   47 |        47 |       3 | chaser | 1992-03-12 |   47 | Lucius      | Malfoy          |    3 | Slytherin  |
+|   66 |        66 |       3 | seeker | 1991-02-23 |   66 | Salazar     | Slytherin       |    3 | Slytherin  |
+|   11 |        11 |       3 | beater | 1996-10-04 |   11 | Millicent   | Bulstrode       |    3 | Slytherin  |
+|   88 |        88 |       3 | beater | 1991-07-08 |   88 | Blaise      | Zabini          |    3 | Slytherin  |
+|   89 |        89 |       3 | chaser | 1996-09-25 |   89 | Bloody      | Baron           |    3 | Slytherin  |
+|    5 |         5 |       3 | keeper | 1997-07-16 |    5 | Regulus     | Black           |    3 | Slytherin  |
+|   48 |        48 |       3 | seeker | 1993-03-17 |   48 | Narcissa    | Malfoy          |    3 | Slytherin  |
+|   69 |        69 |       3 | beater | 1997-03-06 |   69 | Severus     | Snape           |    3 | Slytherin  |
+|   52 |        52 |       3 | beater | 1991-12-14 |   52 | Pansy       | Parkinson       |    3 | Slytherin  |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+84 rows in set (0.02 sec)
+
+mysql> SELECT * from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id ORDER by t.name DESC, p.role;
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+| id   | wizard_id | team_id | role   | lastname   | id   | firstname   | lastname        | id   | name       |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+|   69 |        69 |       3 | beater | 1997-03-06 |   69 | Severus     | Snape           |    3 | Slytherin  |
+|   11 |        11 |       3 | beater | 1996-10-04 |   11 | Millicent   | Bulstrode       |    3 | Slytherin  |
+|   25 |        25 |       3 | beater | 1996-12-16 |   25 | Marcus      | Flint           |    3 | Slytherin  |
+|   16 |        16 |       3 | beater | 1992-11-27 |   16 | Vincent     | Crabbe          |    3 | Slytherin  |
+|   88 |        88 |       3 | beater | 1991-07-08 |   88 | Blaise      | Zabini          |    3 | Slytherin  |
+|   52 |        52 |       3 | beater | 1991-12-14 |   52 | Pansy       | Parkinson       |    3 | Slytherin  |
+|   73 |        73 |       3 | chaser | 1994-01-28 |   73 | Andromeda   | Tonks           |    3 | Slytherin  |
+|   50 |        50 |       3 | chaser | 1996-12-02 |   50 | Theodore    | Nott            |    3 | Slytherin  |
+|    4 |         4 |       3 | chaser | 1995-03-24 |    4 | Phineas     | Nigellus        |    3 | Slytherin  |
+|   47 |        47 |       3 | chaser | 1992-03-12 |   47 | Lucius      | Malfoy          |    3 | Slytherin  |
+|   46 |        46 |       3 | chaser | 1993-11-02 |   46 | Draco       | Malfoy          |    3 | Slytherin  |
+|   89 |        89 |       3 | chaser | 1996-09-25 |   89 | Bloody      | Baron           |    3 | Slytherin  |
+|   62 |        62 |       3 | chaser | 1990-02-27 |   62 | Tom         | Riddle          |    3 | Slytherin  |
+|   35 |        35 |       3 | chaser | 1992-03-21 |   35 | Bellatrix   | Lestrange       |    3 | Slytherin  |
+|   37 |        37 |       3 | chaser | 1991-04-27 |   37 | Rodolphus   | Lestrange       |    3 | Slytherin  |
+|    5 |         5 |       3 | keeper | 1997-07-16 |    5 | Regulus     | Black           |    3 | Slytherin  |
+|   76 |        76 |       3 | seeker | 1993-10-23 |   76 | Dolores     | Umbridge        |    3 | Slytherin  |
+|   48 |        48 |       3 | seeker | 1993-03-17 |   48 | Narcissa    | Malfoy          |    3 | Slytherin  |
+|   28 |        28 |       3 | seeker | 1994-05-13 |   28 | Gregory     | Goyle           |    3 | Slytherin  |
+|   66 |        66 |       3 | seeker | 1991-02-23 |   66 | Salazar     | Slytherin       |    3 | Slytherin  |
+|   36 |        36 |       3 | seeker | 1997-10-30 |   36 | Rabastan    | Lestrange       |    3 | Slytherin  |
+|   92 |        92 |       2 | beater | 1997-12-14 |   92 | Myrtle      | Warren          |    2 | Ravenclaw  |
+|   13 |        13 |       2 | beater | 1991-01-11 |   13 | Penelope    | Clearwater      |    2 | Ravenclaw  |
+|   60 |        60 |       2 | beater | 1992-04-12 |   60 | Helena      | Ravenclaw       |    2 | Ravenclaw  |
+|   59 |        59 |       2 | beater | 1995-09-23 |   59 | Quirinus    | Quirrell        |    2 | Ravenclaw  |
+|   12 |        12 |       2 | chaser | 1992-01-27 |   12 | Cho         | Chang           |    2 | Ravenclaw  |
+|   22 |        22 |       2 | chaser | 1990-07-05 |   22 | Marietta    | Edgecombe       |    2 | Ravenclaw  |
+|   44 |        44 |       2 | chaser | 1991-03-11 |   44 | Xenophilius | Lovegood        |    2 | Ravenclaw  |
+|   26 |        26 |       2 | chaser | 1997-02-07 |   26 | Filius      | Flitwick        |    2 | Ravenclaw  |
+|   27 |        27 |       2 | chaser | 1999-07-31 |   27 | Anthony     | Goldstein       |    2 | Ravenclaw  |
+|   51 |        51 |       2 | chaser | 1995-06-25 |   51 | Garrick     | Ollivander      |    2 | Ravenclaw  |
+|   43 |        43 |       2 | chaser | 1998-03-01 |   43 | Luna        | Lovegood        |    2 | Ravenclaw  |
+|   38 |        38 |       2 | chaser | 1998-04-05 |   38 | Gilderoy    | Lockhart        |    2 | Ravenclaw  |
+|   75 |        75 |       2 | seeker | 1991-12-28 |   75 | Sybill      | Trelawney       |    2 | Ravenclaw  |
+|   61 |        61 |       2 | seeker | 1992-10-09 |   61 | Rowena      | Ravenclaw       |    2 | Ravenclaw  |
+|   14 |        14 |       2 | seeker | 1995-08-17 |   14 | Michael     | Corner          |    2 | Ravenclaw  |
+|    1 |         1 |       4 | beater | 1995-10-09 |    1 | Hannah      | Abbott          |    4 | Hufflepuff |
+|   67 |        67 |       4 | beater | 1996-07-18 |   67 | Hepzibah    | Smith           |    4 | Hufflepuff |
+|   71 |        71 |       4 | beater | 1998-06-12 |   71 | Pomona      | Sprout          |    4 | Hufflepuff |
+|   74 |        74 |       4 | beater | 1999-11-25 |   74 | Nymphadora  | Tonks           |    4 | Hufflepuff |
+|   91 |        91 |       4 | beater | 1993-11-04 |   91 | Fat         | Friar           |    4 | Hufflepuff |
+|   23 |        23 |       4 | beater | 1995-01-06 |   23 | Justin      | Finch-Fletchley |    4 | Hufflepuff |
+|    7 |         7 |       4 | chaser | 1999-01-21 |    7 | Amelia      | Bones           |    4 | Hufflepuff |
+|   64 |        64 |       4 | chaser | 1999-01-12 |   64 | Newton      | Scamander       |    4 | Hufflepuff |
+|    8 |         8 |       4 | keeper | 1991-10-20 |    8 | Susan       | Bones           |    4 | Hufflepuff |
+|   19 |        19 |       4 | keeper | 1997-11-02 |   19 | Cedric      | Diggory         |    4 | Hufflepuff |
+|   68 |        68 |       4 | keeper | 1993-10-01 |   68 | Zacharias   | Smith           |    4 | Hufflepuff |
+|   32 |        32 |       4 | seeker | 1992-08-14 |   32 | Helga       | Hufflepuff      |    4 | Hufflepuff |
+|   39 |        39 |       1 | beater | 1992-02-17 |   39 | Alice       | Longbottom      |    1 | Gryffindor |
+|   78 |        78 |       1 | beater | 1992-01-01 |   78 | Arthur      | Weasley         |    1 | Gryffindor |
+|    6 |         6 |       1 | beater | 1994-01-10 |    6 | Sirius      | Black           |    1 | Gryffindor |
+|   24 |        24 |       1 | beater | 1997-02-08 |   24 | Seamus      | Finnigan        |    1 | Gryffindor |
+|   56 |        56 |       1 | beater | 1997-03-05 |   56 | Harry       | Potter          |    1 | Gryffindor |
+|   57 |        57 |       1 | beater | 1996-12-07 |   57 | James       | Potter          |    1 | Gryffindor |
+|   49 |        49 |       1 | beater | 1992-07-14 |   49 | Minerva     | McGonagall      |    1 | Gryffindor |
+|   31 |        31 |       1 | beater | 1994-11-16 |   31 | Rubeus      | Hagrid          |    1 | Gryffindor |
+|   72 |        72 |       1 | beater | 1997-11-23 |   72 | Dean        | Thomas          |    1 | Gryffindor |
+|   85 |        85 |       1 | beater | 1990-09-05 |   85 | Percy       | Weasley         |    1 | Gryffindor |
+|   10 |        10 |       1 | beater | 1991-08-03 |   10 | Lavender    | Brown           |    1 | Gryffindor |
+|   55 |        55 |       1 | chaser | 1991-05-14 |   55 | Peter       | Pettigrew       |    1 | Gryffindor |
+|   58 |        58 |       1 | chaser | 1999-02-23 |   58 | Lily        | J.              |    1 | Gryffindor |
+|   42 |        42 |       1 | chaser | 1998-05-06 |   42 | Neville     | Longbottom      |    1 | Gryffindor |
+|   70 |        70 |       1 | chaser | 1995-11-08 |   70 | Alicia      | Spinnet         |    1 | Gryffindor |
+|   29 |        29 |       1 | chaser | 1997-08-14 |   29 | Hermione    | Granger         |    1 | Gryffindor |
+|   21 |        21 |       1 | chaser | 1991-03-12 |   21 | Albus       | Dumbledore      |    1 | Gryffindor |
+|   41 |        41 |       1 | chaser | 1999-10-25 |   41 | Augusta     | Longbottom      |    1 | Gryffindor |
+|   82 |        82 |       1 | chaser | 1991-08-26 |   82 | George      | Weasley         |    1 | Gryffindor |
+|    2 |         2 |       1 | chaser | 1995-08-17 |    2 | Katie       | Bell            |    1 | Gryffindor |
+|   87 |        87 |       1 | chaser | 1999-04-08 |   87 | Oliver      | Wood            |    1 | Gryffindor |
+|   40 |        40 |       1 | chaser | 1995-10-15 |   40 | Frank       | Longbottom      |    1 | Gryffindor |
+|   34 |        34 |       1 | chaser | 1996-01-31 |   34 | Lee         | Jordan          |    1 | Gryffindor |
+|   33 |        33 |       1 | keeper | 1995-12-02 |   33 | Angelina    | Johnson         |    1 | Gryffindor |
+|   83 |        83 |       1 | keeper | 1992-04-17 |   83 | Ginevra     | Weasley         |    1 | Gryffindor |
+|   20 |        20 |       1 | keeper | 1995-04-24 |   20 | Aberforth   | Dumbledore      |    1 | Gryffindor |
+|   18 |        18 |       1 | keeper | 1991-05-01 |   18 | Dennis      | Creevey         |    1 | Gryffindor |
+|   90 |        90 |       1 | keeper | 1993-01-04 |   90 | Cadogan     |                 |    1 | Gryffindor |
+|   93 |        93 |       1 | keeper | 1992-05-27 |   93 | Nicholas    | de              |    1 | Gryffindor |
+|   79 |        79 |       1 | seeker | 1991-04-27 |   79 | William     | Weasley         |    1 | Gryffindor |
+|   81 |        81 |       1 | seeker | 1998-03-29 |   81 | Fred        | Weasley         |    1 | Gryffindor |
+|   86 |        86 |       1 | seeker | 1997-06-22 |   86 | Ronald      | Weasley         |    1 | Gryffindor |
+|   30 |        30 |       1 | seeker | 1993-08-30 |   30 | Godric      | Gryffindor      |    1 | Gryffindor |
+|   17 |        17 |       1 | seeker | 1993-07-07 |   17 | Colin       | Creevey         |    1 | Gryffindor |
+|   77 |        77 |       1 | seeker | 1990-07-31 |   77 | Romilda     | Vane            |    1 | Gryffindor |
+|    3 |         3 |       1 | seeker | 1994-12-03 |    3 | Cuthbert    | Binns           |    1 | Gryffindor |
++------+-----------+---------+--------+------------+------+-------------+-----------------+------+------------+
+84 rows in set (0.00 sec)
+
+mysql> SELECT firstname, lastname, role, team from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id ORDER by t.name DESC, p.role;
+ERROR 1052 (23000): Column 'lastname' in field list is ambiguous
+mysql> SELECT firstname, w.lastname, role, team from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id ORDER by t.name DESC, p.role;
+ERROR 1054 (42S22): Unknown column 'team' in 'field list'
+mysql> SELECT firstname, w.lastname, role, name from player p, wizard w, team t where p.wizard_id=w.id and p.team_id=t.id ORDER by t.name DESC, p.role;
++-------------+-----------------+--------+------------+
+| firstname   | lastname        | role   | name       |
++-------------+-----------------+--------+------------+
+| Severus     | Snape           | beater | Slytherin  |
+| Millicent   | Bulstrode       | beater | Slytherin  |
+| Marcus      | Flint           | beater | Slytherin  |
+| Vincent     | Crabbe          | beater | Slytherin  |
+| Blaise      | Zabini          | beater | Slytherin  |
+| Pansy       | Parkinson       | beater | Slytherin  |
+| Andromeda   | Tonks           | chaser | Slytherin  |
+| Theodore    | Nott            | chaser | Slytherin  |
+| Phineas     | Nigellus        | chaser | Slytherin  |
+| Lucius      | Malfoy          | chaser | Slytherin  |
+| Draco       | Malfoy          | chaser | Slytherin  |
+| Bloody      | Baron           | chaser | Slytherin  |
+| Tom         | Riddle          | chaser | Slytherin  |
+| Bellatrix   | Lestrange       | chaser | Slytherin  |
+| Rodolphus   | Lestrange       | chaser | Slytherin  |
+| Regulus     | Black           | keeper | Slytherin  |
+| Dolores     | Umbridge        | seeker | Slytherin  |
+| Narcissa    | Malfoy          | seeker | Slytherin  |
+| Gregory     | Goyle           | seeker | Slytherin  |
+| Salazar     | Slytherin       | seeker | Slytherin  |
+| Rabastan    | Lestrange       | seeker | Slytherin  |
+| Myrtle      | Warren          | beater | Ravenclaw  |
+| Penelope    | Clearwater      | beater | Ravenclaw  |
+| Helena      | Ravenclaw       | beater | Ravenclaw  |
+| Quirinus    | Quirrell        | beater | Ravenclaw  |
+| Cho         | Chang           | chaser | Ravenclaw  |
+| Marietta    | Edgecombe       | chaser | Ravenclaw  |
+| Xenophilius | Lovegood        | chaser | Ravenclaw  |
+| Filius      | Flitwick        | chaser | Ravenclaw  |
+| Anthony     | Goldstein       | chaser | Ravenclaw  |
+| Garrick     | Ollivander      | chaser | Ravenclaw  |
+| Luna        | Lovegood        | chaser | Ravenclaw  |
+| Gilderoy    | Lockhart        | chaser | Ravenclaw  |
+| Sybill      | Trelawney       | seeker | Ravenclaw  |
+| Rowena      | Ravenclaw       | seeker | Ravenclaw  |
+| Michael     | Corner          | seeker | Ravenclaw  |
+| Hannah      | Abbott          | beater | Hufflepuff |
+| Hepzibah    | Smith           | beater | Hufflepuff |
+| Pomona      | Sprout          | beater | Hufflepuff |
+| Nymphadora  | Tonks           | beater | Hufflepuff |
+| Fat         | Friar           | beater | Hufflepuff |
+| Justin      | Finch-Fletchley | beater | Hufflepuff |
+| Amelia      | Bones           | chaser | Hufflepuff |
+| Newton      | Scamander       | chaser | Hufflepuff |
+| Susan       | Bones           | keeper | Hufflepuff |
+| Cedric      | Diggory         | keeper | Hufflepuff |
+| Zacharias   | Smith           | keeper | Hufflepuff |
+| Helga       | Hufflepuff      | seeker | Hufflepuff |
+| Alice       | Longbottom      | beater | Gryffindor |
+| Arthur      | Weasley         | beater | Gryffindor |
+| Sirius      | Black           | beater | Gryffindor |
+| Seamus      | Finnigan        | beater | Gryffindor |
+| Harry       | Potter          | beater | Gryffindor |
+| James       | Potter          | beater | Gryffindor |
+| Minerva     | McGonagall      | beater | Gryffindor |
+| Rubeus      | Hagrid          | beater | Gryffindor |
+| Dean        | Thomas          | beater | Gryffindor |
+| Percy       | Weasley         | beater | Gryffindor |
+| Lavender    | Brown           | beater | Gryffindor |
+| Peter       | Pettigrew       | chaser | Gryffindor |
+| Lily        | J.              | chaser | Gryffindor |
+| Neville     | Longbottom      | chaser | Gryffindor |
+| Alicia      | Spinnet         | chaser | Gryffindor |
+| Hermione    | Granger         | chaser | Gryffindor |
+| Albus       | Dumbledore      | chaser | Gryffindor |
+| Augusta     | Longbottom      | chaser | Gryffindor |
+| George      | Weasley         | chaser | Gryffindor |
+| Katie       | Bell            | chaser | Gryffindor |
+| Oliver      | Wood            | chaser | Gryffindor |
+| Frank       | Longbottom      | chaser | Gryffindor |
+| Lee         | Jordan          | chaser | Gryffindor |
+| Angelina    | Johnson         | keeper | Gryffindor |
+| Ginevra     | Weasley         | keeper | Gryffindor |
+| Aberforth   | Dumbledore      | keeper | Gryffindor |
+| Dennis      | Creevey         | keeper | Gryffindor |
+| Cadogan     |                 | keeper | Gryffindor |
+| Nicholas    | de              | keeper | Gryffindor |
+| William     | Weasley         | seeker | Gryffindor |
+| Fred        | Weasley         | seeker | Gryffindor |
+| Ronald      | Weasley         | seeker | Gryffindor |
+| Godric      | Gryffindor      | seeker | Gryffindor |
+| Colin       | Creevey         | seeker | Gryffindor |
+| Romilda     | Vane            | seeker | Gryffindor |
+| Cuthbert    | Binns           | seeker | Gryffindor |
++-------------+-----------------+--------+------------+
+84 rows in set (0.00 sec)
+
+mysql> SELECT firstname, w.lastname, role, name from team t INNER JOIN player p ON t.id=p.team_id INNER JOIN wizard w ON p.wizard_id=w.id ORDER by t.name DESC, p.role;
++-------------+-----------------+--------+------------+
+| firstname   | lastname        | role   | name       |
++-------------+-----------------+--------+------------+
+| Severus     | Snape           | beater | Slytherin  |
+| Millicent   | Bulstrode       | beater | Slytherin  |
+| Marcus      | Flint           | beater | Slytherin  |
+| Vincent     | Crabbe          | beater | Slytherin  |
+| Blaise      | Zabini          | beater | Slytherin  |
+| Pansy       | Parkinson       | beater | Slytherin  |
+| Andromeda   | Tonks           | chaser | Slytherin  |
+| Theodore    | Nott            | chaser | Slytherin  |
+| Phineas     | Nigellus        | chaser | Slytherin  |
+| Lucius      | Malfoy          | chaser | Slytherin  |
+| Draco       | Malfoy          | chaser | Slytherin  |
+| Bloody      | Baron           | chaser | Slytherin  |
+| Tom         | Riddle          | chaser | Slytherin  |
+| Bellatrix   | Lestrange       | chaser | Slytherin  |
+| Rodolphus   | Lestrange       | chaser | Slytherin  |
+| Regulus     | Black           | keeper | Slytherin  |
+| Dolores     | Umbridge        | seeker | Slytherin  |
+| Narcissa    | Malfoy          | seeker | Slytherin  |
+| Gregory     | Goyle           | seeker | Slytherin  |
+| Salazar     | Slytherin       | seeker | Slytherin  |
+| Rabastan    | Lestrange       | seeker | Slytherin  |
+| Myrtle      | Warren          | beater | Ravenclaw  |
+| Penelope    | Clearwater      | beater | Ravenclaw  |
+| Helena      | Ravenclaw       | beater | Ravenclaw  |
+| Quirinus    | Quirrell        | beater | Ravenclaw  |
+| Cho         | Chang           | chaser | Ravenclaw  |
+| Marietta    | Edgecombe       | chaser | Ravenclaw  |
+| Xenophilius | Lovegood        | chaser | Ravenclaw  |
+| Filius      | Flitwick        | chaser | Ravenclaw  |
+| Anthony     | Goldstein       | chaser | Ravenclaw  |
+| Garrick     | Ollivander      | chaser | Ravenclaw  |
+| Luna        | Lovegood        | chaser | Ravenclaw  |
+| Gilderoy    | Lockhart        | chaser | Ravenclaw  |
+| Sybill      | Trelawney       | seeker | Ravenclaw  |
+| Rowena      | Ravenclaw       | seeker | Ravenclaw  |
+| Michael     | Corner          | seeker | Ravenclaw  |
+| Hannah      | Abbott          | beater | Hufflepuff |
+| Hepzibah    | Smith           | beater | Hufflepuff |
+| Pomona      | Sprout          | beater | Hufflepuff |
+| Nymphadora  | Tonks           | beater | Hufflepuff |
+| Fat         | Friar           | beater | Hufflepuff |
+| Justin      | Finch-Fletchley | beater | Hufflepuff |
+| Amelia      | Bones           | chaser | Hufflepuff |
+| Newton      | Scamander       | chaser | Hufflepuff |
+| Susan       | Bones           | keeper | Hufflepuff |
+| Cedric      | Diggory         | keeper | Hufflepuff |
+| Zacharias   | Smith           | keeper | Hufflepuff |
+| Helga       | Hufflepuff      | seeker | Hufflepuff |
+| Alice       | Longbottom      | beater | Gryffindor |
+| Arthur      | Weasley         | beater | Gryffindor |
+| Sirius      | Black           | beater | Gryffindor |
+| Seamus      | Finnigan        | beater | Gryffindor |
+| Harry       | Potter          | beater | Gryffindor |
+| James       | Potter          | beater | Gryffindor |
+| Minerva     | McGonagall      | beater | Gryffindor |
+| Rubeus      | Hagrid          | beater | Gryffindor |
+| Dean        | Thomas          | beater | Gryffindor |
+| Percy       | Weasley         | beater | Gryffindor |
+| Lavender    | Brown           | beater | Gryffindor |
+| Peter       | Pettigrew       | chaser | Gryffindor |
+| Lily        | J.              | chaser | Gryffindor |
+| Neville     | Longbottom      | chaser | Gryffindor |
+| Alicia      | Spinnet         | chaser | Gryffindor |
+| Hermione    | Granger         | chaser | Gryffindor |
+| Albus       | Dumbledore      | chaser | Gryffindor |
+| Augusta     | Longbottom      | chaser | Gryffindor |
+| George      | Weasley         | chaser | Gryffindor |
+| Katie       | Bell            | chaser | Gryffindor |
+| Oliver      | Wood            | chaser | Gryffindor |
+| Frank       | Longbottom      | chaser | Gryffindor |
+| Lee         | Jordan          | chaser | Gryffindor |
+| Angelina    | Johnson         | keeper | Gryffindor |
+| Ginevra     | Weasley         | keeper | Gryffindor |
+| Aberforth   | Dumbledore      | keeper | Gryffindor |
+| Dennis      | Creevey         | keeper | Gryffindor |
+| Cadogan     |                 | keeper | Gryffindor |
+| Nicholas    | de              | keeper | Gryffindor |
+| William     | Weasley         | seeker | Gryffindor |
+| Fred        | Weasley         | seeker | Gryffindor |
+| Ronald      | Weasley         | seeker | Gryffindor |
+| Godric      | Gryffindor      | seeker | Gryffindor |
+| Colin       | Creevey         | seeker | Gryffindor |
+| Romilda     | Vane            | seeker | Gryffindor |
+| Cuthbert    | Binns           | seeker | Gryffindor |
++-------------+-----------------+--------+------------+
+84 rows in set (0.00 sec)
+
+mysql>
